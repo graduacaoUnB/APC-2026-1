@@ -3,11 +3,20 @@ o professor Jorge disponibilizou uma lista de exercícios disponível em https:/
 praticamos, utilizando o [Python Tutor](https://pythontutor.com/visualize.html#mode=edit), a execução de códigos na linguagem C.
 
 tópicos abordados:
-- inclusão do header/biblioteca de IO padrão (stdio.h)
-- retorno da função main (0 significa execução bem-sucedida)
-- função printf
-- caractere terminador '\0' de strings
+- inclusão do header/biblioteca de IO padrão (`stdio.h`)
+- retorno da função `main` (0 significa execução bem-sucedida)
+- função `printf`
+- caractere terminador `\0` de strings
 - memória ocupada por números e caracteres/strings
-- formatadores %s e %d da função printf
+- formatadores `%s` e `%d` da função `printf`
 - espaço ocupado por diferentes tipos de dados (int, float, etc)
+- bit de sinal
+- diferença int x float
+- aritmética de ponto flutuante IEEE 754 (mantissa, expoente)
+- variáveis (declaração e inicialização)
+- em C variáveis são *tipadas*, em Python não
+- modificador *const*
+- convenção de nomenclatura de constantes usando letras maiúsculas
+- comentários com `//` e `/* */`
+- linguagem compilada (C) x linguagem interprestada (Python)
 - 
