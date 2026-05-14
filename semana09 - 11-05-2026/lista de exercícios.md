@@ -19,4 +19,12 @@ tópicos abordados:
 - convenção de nomenclatura de constantes usando letras maiúsculas
 - comentários com `//` e `/* */`
 - linguagem compilada (C) x linguagem interprestada (Python)
+- memória stack
+- registro de ativação da função
+- recursividade
+- erro stack overflow
+- programação concorrente
+- operadores
+- 0 como falso e 1 como verdadeiro
+- codificação ASCII
 - 
