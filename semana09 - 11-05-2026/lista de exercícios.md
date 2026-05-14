@@ -27,4 +27,6 @@ tópicos abordados:
 - operadores
 - 0 como falso e 1 como verdadeiro
 - codificação ASCII
+- implementações equivalentes em linguagem C e na linguagem Assembly do LMC
+- estruturas de controle de fluxo goto, while, do while, for
 - 
