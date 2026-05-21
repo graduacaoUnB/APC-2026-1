@@ -46,10 +46,10 @@ o endereço inicial desta região de memória é retornado pela função `malloc
 
 5) em seguida a função `init` (declarada no passo 5*) é chamada (invocada), recebendo o valor da variável `p`
 
-5*) definição da função `init`, que recebe um atributo que é um ponteiro para um objeto do tipo `Pilha`
-    - o membro `topo` da `Pilha` `p` recebe o valor 0
-    - a função encerra retornando 0, porém tal retorno é ignorado pois a função foi declarada como não tendo retorno (`void`)
-    - percebe-se que a função `init` inicializa o objeto do tipo `Pilha` que recebe, setando como topo o início da pilha (índice 0)
+> 5*. definição da função `init`, que recebe um atributo que é um ponteiro para um objeto do tipo `Pilha`
+>  - o membro `topo` da `Pilha` `p` recebe o valor 0
+>  - a função encerra retornando 0, porém tal retorno é ignorado pois a função foi declarada como não tendo retorno (`void`)
+>  - percebe-se que a função `init` inicializa o objeto do tipo `Pilha` que recebe, setando como topo o início da pilha (índice 0)
 
 6) o membro `topo` da `Pilha` `p` recebe o valor ffffffff<sub>16</sub>; como `topo` é um `int`, o valor de `p` será -1<sub>10</sub>
 
