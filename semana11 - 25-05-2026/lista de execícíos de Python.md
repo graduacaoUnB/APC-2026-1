@@ -30,6 +30,9 @@
 - numerais de aritmética de ponto flutuante
   - C possui diferentes tipos, como `float` e `double`
   - já Python possui apenas 1 tipo, `float`, que ocupa 64 bits (4 bytes)
+- coleções
+  - C possui arrays
+  - já Python possui listas, que têm métodos que facilitam seu uso
 
 #### declaração e atribuição
 - em C criação (declaração) e atribuição de variáveis são ações diferentes e separáveis, isto é, é possível em um momento fazer uma declaração e em um momento posterior realizar a atribuição da variável
@@ -38,6 +41,15 @@
 ## reatribuição e contagem de referências
 - se duas variáveis referenciarem o memso objeto, pode-se usar qualquer das variáveis para alterar o objeto (mudanças serão acessíveis por abas variáveis)
 
-#### operadores 4
+#### operadores
+- muito semelhantes em C e Python
 
+#### escopo
+- em C, chaves `{}` delimitam escopos
+- em Python, escopos são delimitados por indentação
+- 
 
+#### controle de fluxo
+- em Python, ao contrário de em C, o `for` possui uma cláusula `else` vinculada; esta cláusula seŕa executada caso o laço complete sem ser interrompido por comando `break`
+
+##### funções 6
