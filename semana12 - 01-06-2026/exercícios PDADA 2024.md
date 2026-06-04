@@ -65,6 +65,8 @@ significa que aquele morador representa aproximadamente 79 pessoas na populaçã
 Nos exercícios deste caderno, **não usaremos o peso amostral** — trabalharemos com contagens simples.  
 
 
+**** parei aqui ****
+
 
 ---
 
