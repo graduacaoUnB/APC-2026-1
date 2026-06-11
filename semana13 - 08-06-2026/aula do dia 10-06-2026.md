@@ -20,7 +20,8 @@ dicionários
 exercícios (via Google Colab)
 
 revisão para prova:
-- o que é um computador?
+- o que é um computador
+  - Little Man Computer
 - algoritmos
   - algoritmos de ordenação (bubble sort, selection sort, insertion sort)
 - OctoStudio, Scratch
