@@ -35,6 +35,10 @@ revisão para prova:
     - int, long, float, double, char
   - expressões lógicas
   - expressões aritméticas
+  - stdio.h
+    - funções `printf` e `scanf`
+  - stdlib.h
+    - funções `malloc` e `free`
   - alocação de memória
     - malloc, sizeof
   - struct
