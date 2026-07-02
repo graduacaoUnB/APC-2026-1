@@ -1,6 +1,6 @@
-import tkinter as tk
-import pandas as pd
 import matplotlib
+import pandas
+import tkinter
 
 matplotlib.use("TkAgg")
 

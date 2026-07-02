@@ -5,13 +5,14 @@ Marcos Torres, matrícula 261048383
 Prof. Jorge Henrique Cabral Fernandes | jhcf@unb.br
 
 ## contexto
-- lógica de programação com JavaScript (Code.org Game Lab)
-- Python: variáveis, tipos, estruturas de controle, funções, listas, dicionários
-- pandas: leitura de CSV/Excel, filtragem, agrupamento, `value_counts`, `merge`
-- tkinter: janelas, widgets, layout com `grid`, eventos, diálogos, gráficos com matplotlib
-- microdados PDAD 2024: estrutura de duas tabelas relacionadas por `A01nficha`, dicionário de variáveis, valores sentinela (99999, 88888), blocos temáticos (domicílio, educação, saúde, trabalho, renda)
-
 Este trabalho integra os conhecimentos adquiridos na disciplina em um **sistema com interface gráfica** que permite a uma pessoa explorar interativamente algum recorte da realidade social do Distrito Federal a partir dos dados do PDAD.
+
+Entre outros conhecimentos, este projeto exige conhecimentos em:
+
+lógica de programação,
+Python: variáveis, tipos, estruturas de controle, funções, listas, dicionários
+pandas: leitura de arquivos, filtragem, agrupamento, `value_counts`, `merge`
+tkinter: janelas, widgets, layout com `grid`, eventos, diálogos, gráficos com matplotlib
 
 ## como executar
 - O programa deve ser executado com o comando `python sistema.py`. Uma janela principal abrirá, a partir da qual o usuário conseguirá explorar os dados.
@@ -48,11 +49,20 @@ pdad-explorer/
 ```
 
 ## dados
-- os arquivos completos do PDAD são muito grandes, o que gera lentidão no carregamento, por isso para desenvolvomento foram incluídos neste repositório apenas arquivos com dados parciais para teste
+Este sistema usa microdados do PDAD 2024:
+- 2 tabelas: uma tabela com dados de domicílios, e outra com dados de moradores
+- as 2 tabelas se relacionam pelo campo `A01nficha`
+- as tabelas possuem "blocos temáticos" (domicílio, educação, saúde, trabalho, renda)
+- as colunas possuem "valores sentinela" (99999, 88888), que significam dados inaplicáveis ou não declarados, que serão filtrados das análises
+- os arquivos completos do PDAD são muito grandes, o que gera lentidão no carregamento, por isso para desenvolvimento foram incluídos neste repositório apenas arquivos com dados parciais para teste
 - pode-se fazer download dos arquivos completos em https://pdad.ipe.df.gov.br:
     - `PDAD_2024-Moradores.csv` — uma linha por morador (~25.000 registros)
     - `PDAD_2024-Domicilios.xlsx` — uma linha por domicílio
-    - `Dicionario_de_variaveis_PDAD_2024.xlsx` — descrição de cada coluna
+    - `Dicionario_de_variaveis_PDAD_2024.xlsx` — dicionário de variáveis, com descrição de cada coluna
+
+
+
+
 
 ----
 
