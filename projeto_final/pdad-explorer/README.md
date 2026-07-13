@@ -2,35 +2,34 @@
 
 Marcos Torres, matrícula 261048383
 
-Prof. Jorge Henrique Cabral Fernandes | jhcf@unb.br
-
-## contexto
-Este trabalho integra os conhecimentos adquiridos na disciplina em um **sistema com interface gráfica** que permite a uma pessoa explorar interativamente algum recorte da realidade social do Distrito Federal a partir dos dados do PDAD.
-
-Entre outros conhecimentos, este projeto exige conhecimentos em:
-
-lógica de programação,
-Python: variáveis, tipos, estruturas de controle, funções, listas, dicionários
-pandas: leitura de arquivos, filtragem, agrupamento, `value_counts`, `merge`
-tkinter: janelas, widgets, layout com `grid`, eventos, diálogos, gráficos com matplotlib
-
-## como executar
-- O programa deve ser executado com o comando `python sistema.py`. Uma janela principal abrirá, a partir da qual o usuário conseguirá explorar os dados.
+Professor Jorge Henrique Cabral Fernandes | jhcf@unb.br
 
 ## descrição do sistema
-- Sistema de Exploração dos Microdados PDAD 2024 com Interface Gráfica
-O sistema é um programa desenvolvido na linguagem Python, com a biblioteca tkinter para criação da interface gráfica.
-descrição do sistema em 3–5 frases
+### Sistema de Exploração dos Microdados PDAD 2024 com Interface Gráfica
+Este trabalho integra os conhecimentos adquiridos na disciplina em um **sistema desenvolvido na linguagem Python com interface gráfica criada com a biblioteca Tkinter**. Entre outros, este projeto exige conhecimentos em:
+- lógica de programação
+- Python (variáveis, tipos, estruturas de controle, funções, listas, dicionários)
+- Pandas (leitura de arquivos, filtragem, agrupamento, `value_counts`, `merge`)
+- Tkinter (janelas, widgets, layout com `grid`, eventos, diálogos, gráficos com matplotlib)
 
-## recorte temático **Infraestrutura e Condições dos Domicílios**
+O sistema permite a uma pessoa explorar interativamente um recorte temático (especificamente o recorte **Infraestrutura e Condições dos Domicílios**) da realidade social do Distrito Federal a partir dos dados da Pesquisa Distrital por Amostra de Domicílios (PDAD), permitindo comparação de indicadores de infraestrutura entre RAs, e visualização da relação entre tamanho do domicílio e tipo de imóvel. A **pergunta central** à qual este programa busca auxiliar a responder é: como varia o acesso a infraestrutura (água, esgoto, internet, energia) entre as regiões administrativas (RAs)?
 
-**Pergunta central:** como varia o acesso a infraestrutura (água, esgoto, internet, energia) entre as regiões administrativas (RAs)?
-
-Variáveis principais: blocos B e D da tabela de domicílios, `localidade`, `A01npessoas`
-
-O sistema usa a tabela de domicílios como fonte principal
-permite comparar indicadores de infraestrutura entre RAs
-permite visualizar a relação entre tamanho do domicílio e tipo de imóvel
+## dados
+Este sistema usa microdados do PDAD 2024:
+- 2 tabelas: uma tabela com dados de domicílios, e outra com dados de moradores
+    - arquivo `domicilios.xlsx`, com uma linha para cada domicílio
+        - é a fonte de dados principal
+        - variáveis principais: colunas `localidade`, `A01npessoas`, bloco B (`B01` a `B20`), e bloco D (`D15` a `D16_5`)
+    - arquivo `moradores.csv`, com uma linha para cada morador (~25.000 registros)
+- as 2 tabelas se relacionam pelo campo `A01nficha`
+- as tabelas possuem "blocos temáticos" (domicílio, educação, saúde, trabalho, renda)
+- as colunas possuem "valores sentinela" (99999, 88888), que significam dados inaplicáveis ou não declarados, que serão filtrados das análises
+- há ainda o arquivo `dicionario_de_variaveis_pdada_2024_público.xlsx`, um dicionário de variáveis, com descrição de cada coluna
+- os arquivos completos do PDAD são muito grandes, o que gera lentidão no carregamento; por isso para desenvolvimento foram incluídos neste repositório apenas arquivos com dados parciais para teste
+- pode-se fazer download dos arquivos completos em https://pdad.ipe.df.gov.br -> Resultados -> Microdados:
+    - Base de morador
+    - Base de domicílios
+    - Dicionário de dados
 
 ## Estrutura do repositório
 
@@ -48,18 +47,8 @@ pdad-explorer/
 └── requirements.txt        ← listagem das bibliotecas das quais o programa depende (dependências), instaláveis via `pip install`
 ```
 
-## dados
-Este sistema usa microdados do PDAD 2024:
-- 2 tabelas: uma tabela com dados de domicílios, e outra com dados de moradores
-- as 2 tabelas se relacionam pelo campo `A01nficha`
-- as tabelas possuem "blocos temáticos" (domicílio, educação, saúde, trabalho, renda)
-- as colunas possuem "valores sentinela" (99999, 88888), que significam dados inaplicáveis ou não declarados, que serão filtrados das análises
-- os arquivos completos do PDAD são muito grandes, o que gera lentidão no carregamento, por isso para desenvolvimento foram incluídos neste repositório apenas arquivos com dados parciais para teste
-- pode-se fazer download dos arquivos completos em https://pdad.ipe.df.gov.br:
-    - `PDAD_2024-Moradores.csv` — uma linha por morador (~25.000 registros)
-    - `PDAD_2024-Domicilios.xlsx` — uma linha por domicílio
-    - `Dicionario_de_variaveis_PDAD_2024.xlsx` — dicionário de variáveis, com descrição de cada coluna
-
+## como executar
+- O programa deve ser executado com o comando `python sistema.py`. Uma janela principal abrirá, a partir da qual o usuário conseguirá explorar os dados.
 
 
 
