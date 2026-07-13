@@ -20,7 +20,7 @@ Este sistema usa microdados do PDAD 2024:
     - arquivo `domicilios.xlsx`, com uma linha para cada domicílio
         - é a fonte de dados principal
         - variáveis principais: colunas `localidade`, `A01npessoas`, bloco B (`B01` a `B20`), e bloco D (`D15` a `D16_5`)
-    - arquivo `moradores.csv`, com uma linha para cada morador (~25.000 registros)
+    - arquivo `moradores.csv` (compactado), com uma linha para cada morador (~25.000 registros)
 - as 2 tabelas se relacionam pelo campo `A01nficha`
 - as tabelas possuem "blocos temáticos" (domicílio, educação, saúde, trabalho, renda)
 - as colunas possuem "valores sentinela" (99999, 88888), que significam dados inaplicáveis ou não declarados, que serão filtrados das análises
@@ -41,8 +41,8 @@ pdad-explorer/
 │   ├── calcular.py        ← funções de estatística e ordenação
 │   └── exportar.py        ← função de exportação para arquivo
 ├── dados/
-│   ├── moradores_parcial.csv        ← arquivo de teste local
-│   └── domicilios_parcial.xlsx        ← arquivo de teste local
+│   ├── moradores.zip        ← arquivo compactado de teste local
+│   └── domicilios.xlsx        ← arquivo de teste local
 ├── README.md
 └── requirements.txt        ← listagem das bibliotecas das quais o programa depende (dependências), instaláveis via `pip install`
 ```
