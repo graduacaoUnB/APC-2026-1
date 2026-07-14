@@ -3,6 +3,7 @@ import utils.carregar
 
 
 def exportar_para_arquivo(caminho, df_filtrado, coluna_indicador, ra_selecionada=None):
+    # calcula estatísticas do recorte atual
     stats = utils.calcular.estatisticas_domicilios(df_filtrado, coluna_indicador)
     indicador = utils.carregar.INDICADORES_DESCRICOES.get(coluna_indicador, coluna_indicador)
     ra_texto = "Todas" if ra_selecionada in (None, "", "Todas") else utils.carregar.nome_ra(ra_selecionada)
@@ -35,7 +36,7 @@ def exportar_para_arquivo(caminho, df_filtrado, coluna_indicador, ra_selecionada
         "Compilação de dados por tipo de imóvel:",
     ]
 
-    # Compile data by dwelling type
+    # compila os dados de cada tipo de imóvel separadamente
     tipos_imovel = df_filtrado["B01"].unique()
     for tipo_codigo in sorted(tipos_imovel):
         tipo_nome = utils.carregar.TIPO_IMOVEL.get(int(tipo_codigo), f"tipo {tipo_codigo}")

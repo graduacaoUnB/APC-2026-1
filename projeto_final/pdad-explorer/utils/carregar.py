@@ -22,6 +22,7 @@ def _carregar_ra_nomes():
 
 RA_NOMES = _carregar_ra_nomes()
 
+# busca no dicionário apenas os indicadores usados na interface
 def _carregar_indicadores():
     caminho_dicionario = DADOS_DIR / "dicionario_de_variaveis_pdada_2024_público.xlsx"
     df = pandas.read_excel(caminho_dicionario, sheet_name = "domicilios")
@@ -121,6 +122,7 @@ def carregar_domicilios():
     else:
         raise FileNotFoundError("Arquivo domicilios.xlsx ou domicilios.csv não encontrado em dados/")
 
+    # limpa colunas usadas nas estatísticas e nos gráficos da aplicação
     colunas_limpeza = ["A01npessoas", "B01", "B07", "B08", "D15", "D16_1"]
     domicilios = remover_sentinelas(domicilios, colunas_limpeza)
     return domicilios
@@ -130,6 +132,7 @@ def carregar_dados():
     domicilios = carregar_domicilios()
     return moradores, domicilios
 
+# usa apenas a pessoa responsável pelo domicílio para relacionar perfil individual e infraestrutura
 def cruzar_tabelas(moradores, domicilios):
     responsaveis = moradores[moradores["index"] == 1].copy()
     return pandas.merge(

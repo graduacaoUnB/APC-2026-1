@@ -9,6 +9,7 @@ def percentual_com_acesso(df, coluna_indicador):
     if df.empty or coluna_indicador not in df.columns:
         return 0.0
 
+    # só considera respostas válidas: 1 (com acesso), e 2 (sem acesso)
     validos = df[df[coluna_indicador].isin([1, 2])]
     if validos.empty:
         return 0.0
@@ -47,6 +48,7 @@ def distribuicao_por_ra(df, coluna_indicador):
     if df.empty:
         return []
 
+    # agrupa por RA para contar quantos domicílios válidos existem e quantos têm acesso
     agrupado = {}
     for _, linha in df.iterrows():
         codigo = int(linha["localidade"])
@@ -125,6 +127,7 @@ def analise_escolaridade_infraestrutura(df_cruzado, coluna_indicador):
     if df_cruzado.empty:
         return []
 
+    # o nome da coluna de localidade muda após o merge
     coluna_local = "localidade_dom" if "localidade_dom" in df_cruzado.columns else "localidade"
     resultado = []
 

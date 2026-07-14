@@ -63,6 +63,7 @@ class PDADExplorer:
         self.frame_principal.pack(fill = "both", expand = True, padx = 16, pady = (4, 8))
 
     def _iniciar_carregamento(self):
+        # carregamento dos dados rodando em uma thread separada para não travar a interface gráfica
         thread = threading.Thread(target = self._carregar_em_segundo_plano, daemon = True)
         thread.start()
 
@@ -282,6 +283,8 @@ class PDADExplorer:
 
     def _atualizar_ranking(self, coluna):
         self.lista_ranking.delete(0, tkinter.END)
+
+        # ranking calculado para todas as RAs, independentemente do filtro principal
         self.ranking_dados = utils.calcular.distribuicao_por_ra(self.domicilios, coluna)
 
         for posicao, item in enumerate(self.ranking_dados, start = 1):
@@ -297,6 +300,7 @@ class PDADExplorer:
         item = self.ranking_dados[selecao[0]]
         self._abrir_janela_detalhes(item["codigo"])
 
+    # abre uma janela secundária com o resumo da RA selecionada no ranking
     def _abrir_janela_detalhes(self, codigo_ra):
         coluna = self._coluna_indicador_atual()
         info = utils.calcular.detalhes_ra(self.domicilios, codigo_ra, coluna)
